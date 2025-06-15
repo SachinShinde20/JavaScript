@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console Showcase</title>
+    <script>
+      // Displays a general log message in the console.
+      function displayLogMessage() {
+        console.log("Log message displayed successfully!");
+      }
+
+      //  Displays a warning message in the console with a detailed Lorem Ipsum text.
+      function displayWarning() {
+        console.warn(
+          "This is a warning message. \n" +
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci velit voluptatum, " +
+            "quas mollitia vero illo temporibus provident cum, optio quidem voluptas error impedit " +
+            "autem soluta incidunt quos. Veritatis, ratione delectus."
+        );
+      }
+
+      //  Displays an error message in the console.
+      function displayError() {
+        console.error("An error occurred!");
+      }
+
+      //  Displays an informational message in the console.
+      function displayInfo() {
+        console.info("This is an informational message.");
+      }
+
+      //  Displays an array of data in a tabular format in the console.
+      function displayTableData() {
+        const dataForTable = [
+          "Apple",
+          "Banana",
+          "Cherry",
+          "Date",
+          "Elderberry",
+        ];
+        console.table(dataForTable);
+      }
+
+      //  Clears the console.
+      function clearConsole() {
+        console.clear();
+        console.log("Console has been cleared."); // This message will appear after clearing.
+      }
+    </script>
+  </head>
+  <body>
+    <!-- -- -- -- --
+    Console Example
+     -- -- -- -- -->
+    <h1>Console Output Examples</h1>
+    <button onclick="displayLogMessage()">Show Log Message</button>
+    <button onclick="displayWarning()">Show Warning Message</button>
+    <button onclick="displayError()">Show Error Message</button>
+    <button onclick="displayInfo()">Show Info Message</button>
+    <button onclick="displayTableData()">Show Table Data</button>
+    <button onclick="clearConsole()">Clear Console</button>
+  </body>
+</html>

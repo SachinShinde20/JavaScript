@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // --- Typeof Examples ---
+
+      // 1. undefined
+      let unassignedVariable;
+      console.log(`Type of unassignedVariable: ${typeof unassignedVariable}`);
+      // console.log(`Type of nonExistentVariable: ${typeof nonExistentVariable}`); // Uncomment to see typeof a truly non-existent variable
+
+      // 2. boolean
+      console.log(`Type of true: ${typeof true}`);
+      let isDone = false;
+      console.log(`Type of isDone: ${typeof isDone}`);
+
+      // 3. number
+      console.log(`Type of 10: ${typeof 10}`);
+      console.log(`Type of 3.14: ${typeof 3.14}`);
+      console.log(`Type of -5: ${typeof -5}`);
+      console.log(`Type of Infinity: ${typeof Infinity}`);
+      console.log(`Type of NaN: ${typeof NaN}`); // NaN's type is 'number'
+
+      // 4. bigint
+      const bigNum = 1234567890123456789012345678901234567890n;
+      console.log(`Type of ${bigNum}: ${typeof bigNum}`);
+      console.log(`Type of BigInt(100): ${typeof BigInt(100)}`);
+
+      // 5. string
+      console.log(`Type of "Hello": ${typeof "Hello"}`);
+      console.log(`Type of '': ${typeof ""}`); // Empty string
+      let greeting = `Hola!`; // Template literal
+      console.log(`Type of greeting: ${typeof greeting}`);
+
+      // 6. symbol
+      const uniqueId = Symbol("user_id");
+      console.log(`Type of uniqueId: ${typeof uniqueId}`);
+      // console.log(uniqueId === Symbol('user_id')); // Symbols are unique, this would be false
+
+      // 7. function
+      function sayHello() {
+        console.log("Hello!");
+      }
+      console.log(`Type of sayHello function: ${typeof sayHello}`);
+
+      const multiply = (x, y) => x * y; // Arrow function
+      console.log(`Type of multiply function: ${typeof multiply}`);
+
+      // 8. object
+      console.log(`Type of {}: ${typeof {}}`); // Plain object
+      console.log(`Type of []: ${typeof []}`); // Array (which is an object)
+      console.log(`Type of null: ${typeof null}`); // infamous 'object' bug
+      console.log(`Type of new Date(): ${typeof new Date()}`); // Date object
+      console.log(`Type of /pattern/: ${typeof /pattern/}`); // Regular Expression object
+
+      // --- Checking for Arrays vs. Objects specifically ---
+      console.log(`Is [] an Array? ${Array.isArray([])}`);
+      console.log(`Is {} an Array? ${Array.isArray({})}`);
+    </script>
+  </head>
+  <body>
+    <h1>Typeof</h1>
+  </body>
+</html>
