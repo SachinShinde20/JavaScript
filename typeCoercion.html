@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // --- Operator Type Coercion ---
+
+      // 1. + Operator (String Concatenation OR Addition)
+      console.log("--- + Operator ---");
+      console.log("5" + 2); // Output: "52"
+      console.log(5 + true); // Output: 6
+      console.log("5" + true); // Output: "5true"
+      console.log(null + "5"); // Output: "null5"
+      console.log(undefined + "5"); // Output: "undefined5"
+      console.log([] + 1); // Output: "1"
+      console.log({} + 1); // Output: "[object Object]1"
+
+      // 2. - Operator (Always Tries Number Coercion)
+      console.log("\n--- - Operator ---");
+      console.log("5" - 2); // Output: 3
+      console.log("5abc" - 2); // Output: NaN
+      console.log(true - 1); // Output: 0
+      console.log(null - 1); // Output: -1
+      console.log(undefined - 1); // Output: NaN
+      console.log([] - 1); // Output: -1
+      console.log({} - 1); // Output: NaN
+
+      // 3. * Operator (Tries Numeric Conversion)
+      console.log("\n--- * Operator ---");
+      console.log("5" * 2); // Output: 10
+      console.log(true * 2); // Output: 2
+      console.log(false * 2); // Output: 0
+      console.log(null * 5); // Output: 0
+      console.log(undefined * 5); // Output: NaN
+      console.log("abc" * 2); // Output: NaN
+      console.log([] * 2); // Output: 0
+      console.log([5] * 2); // Output: 10
+      console.log({} * 2); // Output: NaN
+
+      // 4. / Operator (Numeric Conversion)
+      console.log("\n--- / Operator ---");
+      console.log("10" / 2); // Output: 5
+      console.log(true / 2); // Output: 0.5
+      console.log(null / 2); // Output: 0
+      console.log(undefined / 2); // Output: NaN
+      console.log("abc" / 2); // Output: NaN
+      console.log([] / 2); // Output: 0
+      console.log([10] / 2); // Output: 5
+      console.log({} / 2); // Output: NaN
+    </script>
+  </head>
+  <body>
+    <h1>Type Coercion</h1>
+  </body>
+</html>

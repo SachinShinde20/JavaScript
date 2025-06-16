@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // --- Ways to Convert Values to Strings in JavaScript ---
+
+      // 1. String(value) — Global Conversion Function
+      console.log("--- String(value) ---");
+      console.log(String(123)); // Output: "123"
+      console.log(String(true)); // Output: "true"
+      console.log(String(null)); // Output: "null"
+      console.log(String(undefined)); // Output: "undefined"
+      console.log(String({})); // Output: "[object Object]"
+      console.log(String([1, 2, 3])); // Output: "1,2,3"
+      console.log(String(new Date())); // Output: (e.g., "Mon Jun 16 2025 23:05:27 GMT+0530 (India Standard Time)")
+
+      // 2. value.toString() — Method of Object/Data Type
+      console.log("\n--- value.toString() ---");
+      console.log((123).toString()); // Output: "123"
+      console.log(true.toString()); // Output: "true"
+      console.log([1, 2, 3].toString()); // Output: "1,2,3"
+      console.log({ a: 1 }.toString()); // Output: "[object Object]"
+      // console.log(null.toString());      // Will cause a TypeError if uncommented
+      // console.log(undefined.toString()); // Will cause a TypeError if uncommented
+
+      // My additional common way: Implicit Coercion via String Concatenation with empty string
+      console.log("\n--- '' + value ---");
+      console.log("" + 123); // Output: "123"
+      console.log("" + true); // Output: "true"
+      console.log("" + null); // Output: "null"
+      console.log("" + undefined); // Output: "undefined"
+      console.log("" + {}); // Output: "[object Object]"
+      console.log("" + [1, 2, 3]); // Output: "1,2,3"
+      console.log("" + new Date()); // Output: (e.g., "Mon Jun 16 2025 23:05:27 GMT+0530 (India Standard Time)")
+    </script>
+  </head>
+  <body>
+    <h1>Converting to String</h1>
+  </body>
+</html>

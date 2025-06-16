@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // --- Explicit Number Conversion Functions ---
+      // 1. Number() – Strict and Clean Conversion to Number
+      console.log("\n--- Number() Function ---");
+      console.log(Number("42")); // Output: 42
+      console.log(Number("42px")); // Output: NaN
+      console.log(Number("  3.14  ")); // Output: 3.14
+      console.log(Number(true)); // Output: 1
+      console.log(Number(false)); // Output: 0
+      console.log(Number(null)); // Output: 0
+      console.log(Number(undefined)); // Output: NaN
+
+      // 2. Number.parseInt() – Convert to Integer
+      console.log("\n--- Number.parseInt() Function ---");
+      console.log(Number.parseInt("42", 10)); // Output: 42
+      console.log(Number.parseInt("42.99", 10)); // Output: 42
+      console.log(Number.parseInt("42px", 10)); // Output: 42
+      console.log(Number.parseInt("px42", 10)); // Output: NaN
+      console.log(Number.parseInt("111", 2)); // Output: 7
+
+      // 3. Number.parseFloat() – Convert to Floating Point Number
+      console.log("\n--- Number.parseFloat() Function ---");
+      console.log(Number.parseFloat("3.14")); // Output: 3.14
+      console.log(Number.parseFloat("3.14px")); // Output: 3.14
+      console.log(Number.parseFloat("px3.14")); // Output: NaN
+
+      // 4. Math.floor() / Math.ceil() / Math.round() – Rounding Functions
+      console.log("\n--- Math.floor(), Math.ceil(), Math.round() ---");
+      console.log(Math.floor(4.7)); // Output: 4
+      console.log(Math.ceil(4.1)); // Output: 5
+      console.log(Math.round(4.5)); // Output: 5
+    </script>
+  </head>
+  <body>
+    <h1>Type Conversion</h1>
+  </body>
+</html>
