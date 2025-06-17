@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // --- Types of Values an Array Can Hold ---
+      let mix = [1, "hello", true, null, [5, 6], { name: "Sachin" }];
+      // Output (mix): [1, "hello", true, null, [5, 6], {name: "Sachin"}]
+
+      // --- Accessing and Modifying Elements ---
+      let colors = ["red", "green", "blue"];
+      console.log(colors[1]); // Output: "green"
+      colors[1] = "yellow"; // Modify element
+      console.log(colors); // Output: ["red", "yellow", "blue"]
+      console.log(colors.length); // Output: 3
+
+      colors[100] = 3.14; // Creates sparse array
+      console.log(colors); // Output: ["red", "yellow", "blue", <97 empty items>, 3.14] (Note: The empty items display depends on console, but they are there)
+      console.log(colors.length); // Output: 101 (length reflects the highest index + 1)
+
+      // --- Common Array Operations (Methods) ---
+
+      // 1. push() – add after the last element
+      let colorsPush = ["red", "green"]; // Use a new variable to avoid re-declaring const
+      const newLen = colorsPush.push("blue", "yellow");
+      console.log(colorsPush); // Output: ["red", "green", "blue", "yellow"]
+      console.log(newLen); // Output: 4
+
+      // 2. pop() – remove the last element
+      let stack = [10, 20, 30];
+      const last = stack.pop();
+      console.log(last); // Output: 30
+      console.log(stack); // Output: [10, 20]
+
+      // 3. unshift() – add before the first element
+      let queueUnshift = ["b", "c"];
+      queueUnshift.unshift("a");
+      console.log(queueUnshift); // Output: ["a", "b", "c"]
+
+      // 4. shift() – remove the first element
+      let queueShift = ["first", "second", "third"];
+      const removedShift = queueShift.shift();
+      console.log(removedShift); // Output: "first"
+      console.log(queueShift); // Output: ["second", "third"]
+
+      // 5. length – read & write
+      let nums = [1, 2, 3, 4];
+      console.log(nums.length); // Output: 4
+
+      nums.length = 2; // ✂️ truncate
+      console.log(nums); // Output: [1, 2]
+
+      nums.length = 5; // 🕳️ extend (adds empty items/holes)
+      console.log(nums); // Output: [1, 2, <3 empty items>]
+
+      // 6. indexOf() – first position (strict match)
+      const animals = ["cat", "dog", "cat"];
+      console.log(animals.indexOf("cat")); // Output: 0
+      console.log(animals.indexOf("cat", 1)); // Output: 2 (search from index 1)
+      console.log(animals.indexOf("cow")); // Output: -1
+
+      // 7. includes() – easy existence check
+      const basket = ["apple", "banana"];
+      console.log(basket.includes("banana")); // Output: true
+      console.log(basket.includes("pear")); // Output: false
+
+      // 8. slice() – copy or extract without altering the source
+      const letters = ["a", "b", "c", "d"];
+      console.log(letters.slice(1, 3)); // Output: ["b", "c"]
+      console.log(letters); // Output: ["a", "b", "c", "d"] (original unchanged)
+
+      // Quick shallow clone:
+      const clone = letters.slice(); // Output (clone): ["a", "b", "c", "d"] (a new array)
+
+      // 9. splice() – surgical in-place edits
+      let months = ["Jan", "Feb", "April"];
+
+      // insert (at index 2, delete 0 elements, insert "Mar")
+      months.splice(2, 0, "Mar");
+      console.log(months); // Output: ["Jan", "Feb", "Mar", "April"]
+
+      // replace (at index 3, delete 1 element, insert "Apr")
+      months.splice(3, 1, "Apr");
+      console.log(months); // Output: ["Jan", "Feb", "Mar", "Apr"]
+
+      // delete (at index 1, delete 2 elements)
+      const removedSplice = months.splice(1, 2);
+      console.log(removedSplice); // Output: ["Feb", "Mar"]
+      console.log(months); // Output: ["Jan", "Apr"]
+
+      // 10. delete array[index] – use with caution
+      let arrDelete = [1, 2, 3];
+      delete arrDelete[1]; // Returns true (successfully 'deletes' the property)
+      console.log(arrDelete); // Output: [1, <1 empty item>, 3] (creates a sparse array/hole)
+      console.log(arrDelete.length); // Output: 3 (length unchanged)
+
+      // --- Consolidated Array Operations Sequence ---
+      let finalArr = [1, 2, 3, 4];
+      finalArr.push(101);
+      finalArr.push(102);
+      finalArr.push(103);
+      console.log(finalArr); // Output: [1, 2, 3, 4, 101, 102, 103]
+
+      finalArr.pop();
+      finalArr.pop();
+      console.log(finalArr); // Output: [1, 2, 3, 4, 101]
+
+      finalArr.unshift("a", "b", "c");
+      console.log(finalArr); // Output: ["a", "b", "c", 1, 2, 3, 4, 101]
+
+      finalArr.shift();
+      finalArr.shift();
+      console.log(finalArr); // Output: ["c", 1, 2, 3, 4, 101]
+
+      console.log(finalArr.indexOf(1)); // Output: 1
+      console.log(finalArr.indexOf(1, 2)); // Output: -1 (1 is at index 1, searching from index 2 misses it)
+
+      console.log(finalArr.includes(3)); // Output: true
+
+      console.log(finalArr.slice(1, 5)); // Output: [1, 2, 3, 4] (elements from index 1 up to (but not including) index 5)
+      console.log(finalArr); // Output: ["c", 1, 2, 3, 4, 101] (original array is unchanged by slice)
+
+      // Splice operations on finalArr
+      console.log(finalArr.splice(1, 4)); // Output: [1, 2, 3, 4] (removes 4 elements starting at index 1)
+      console.log(finalArr); // Output: ["c", 101] (remaining elements)
+
+      console.log(finalArr.splice(1, 0, 5, 6, 7, 8, 9)); // Output: [] (no elements removed)
+      console.log(finalArr); // Output: ["c", 5, 6, 7, 8, 9, 101] (elements inserted at index 1)
+
+      finalArr.length = 3; // Truncate the array
+      console.log(finalArr); // Output: ["c", 5, 6]
+    </script>
+  </head>
+  <body>
+    <h1>Array</h1>
+  </body>
+</html>

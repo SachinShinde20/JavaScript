@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // --- JavaScript Number Validation Functions ---
+
+      // 🔍 Now let’s break down each one with examples:
+
+      // ✅ 1. isNaN(value) – Loose and Confusing (Not Safe)
+      // What It Does: Loosely checks if the value is Not-a-Number.
+      // Behavior: Tries to convert the value to a number before checking.
+      // Why not safe?: Converts values like "abc" or undefined before checking, which causes false positives.
+      console.log("--- 1. isNaN(value) ---");
+      console.log(isNaN("hello")); // Output: true (❌ "hello" is coerced to NaN)
+      console.log(isNaN(undefined)); // Output: true (❌ undefined is coerced to NaN)
+      console.log(isNaN(NaN)); // Output: true (✅ NaN is indeed NaN)
+      console.log(isNaN(123)); // Output: false (✅ 123 is a number)
+
+      // ✅ 2. Number.isNaN(value) – Strict and Accurate (Safe)
+      // What It Does: Strictly checks if value is actually NaN without converting.
+      // Behavior: No type coercion, works only if value is exactly NaN.
+      // When to use: Use this to specifically check if a variable contains NaN, not just a non-number string or type.
+      console.log("\n--- 2. Number.isNaN(value) ---");
+      console.log(Number.isNaN("hello")); // Output: false (✅ "hello" is not the actual NaN value)
+      console.log(Number.isNaN(undefined)); // Output: false (✅ undefined is not the actual NaN value)
+      console.log(Number.isNaN(NaN)); // Output: true (✅ NaN is indeed NaN)
+      console.log(Number.isNaN(123)); // Output: false (✅ 123 is a number)
+
+      // ✅ 3. Number.isInteger(value) – Checks if value is a real integer
+      // What It Does: Checks if value is a true integer.
+      // Behavior: Returns true for values like 5, false for "5". Precise check: both type and integer-ness must match.
+      // When to use: Use it when you want to ensure the value is a whole number, like when validating index positions or count values.
+      console.log("\n--- 3. Number.isInteger(value) ---");
+      console.log(Number.isInteger(10)); // Output: true
+      console.log(Number.isInteger(10.5)); // Output: false
+      console.log(Number.isInteger("10")); // Output: false (because it's a string, not a number)
+      console.log(Number.isInteger(NaN)); // Output: false
+
+      // ✅ 4. Number.isFinite(value) – Checks if value is a finite number
+      // What It Does: Checks if value is a finite number (not Infinity or NaN).
+      // Behavior: Doesn't coerce strings. Only returns true for finite numeric types.
+      // When to use: Use this when you want to ensure a value is a valid, finite number, especially before doing math.
+      console.log("\n--- 4. Number.isFinite(value) ---");
+      console.log(Number.isFinite(10)); // Output: true
+      console.log(Number.isFinite(Infinity)); // Output: false
+      console.log(Number.isFinite(-Infinity)); // Output: false
+      console.log(Number.isFinite(NaN)); // Output: false
+      console.log(Number.isFinite("10")); // Output: false (it's a string, not a number)
+    </script>
+  </head>
+  <body>
+    <h1>Conditional Checking Funtions</h1>
+  </body>
+</html>
