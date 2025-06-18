@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sayHello(str) {
+        console.log(`Hello ${str}`);
+      }
+
+      function sayWelcome() {
+        console.log(`Argument Passed are: ${arguments.length}`);
+        console.log("Welcome: ");
+        for (let a of arguments) console.log(a);
+      }
+
+      let x = 0;
+      function counter() {
+        console.log(x++);
+      }
+
+      let y = function () {
+        console.log("Anonymous Funtion is called...");
+        return "it is Returning";
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Function</h1>
+    <script>
+      sayHello();
+      sayHello("ABC");
+      sayHello("ABC", "MNO", "PQR");
+
+      console.log("\n");
+      sayWelcome("ABC", "MNO", "PQR");
+
+      console.log("\n");
+      console.log(y());
+    </script>
+    <!-- <a href="JavaScript:counter();">Click On ME</a> -->
+    <!-- <a href="#" onclick="counter()">Click On ME</a> -->
+    <!-- -- -- -- OR -- -- -- -->
+    <button onclick="counter();">Click on Me</button>
+  </body>
+</html>

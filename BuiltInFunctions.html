@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let a = 0;
+      function print() {
+        console.log(`Time ${a++}`);
+      }
+
+      let x;
+      function start() {
+        console.log("Started...");
+        x = setInterval(print, 1000);
+      }
+
+      function stop() {
+        console.log("Stoped...");
+        clearInterval(x);
+      }
+
+      //
+      let y;
+      function call() {
+        console.log("Funtion Will be Called After Some Time...");
+        y = setTimeout(print, 5000);
+      }
+
+      function callStop() {
+        console.log("Stoped Time-Out");
+        clearTimeout(y);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Built In Fuctions</h1>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <br /><br />
+    <button onclick="call()">Set Time-Out</button>
+    <button onclick="callStop()">Stop Time-Out</button>
+  </body>
+</html>
